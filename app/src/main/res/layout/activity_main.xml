@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryBlue"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <ImageView
+        android:id="@+id/main_view_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:clickable="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_menu" />
+
+    <LinearLayout
+        android:id="@+id/main_radio_group_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_view_menu"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="8dp"
+        app:layout_goneMarginBottom="8dp">
+
+        <RadioGroup
+            android:id="@+id/main_view_radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checkedButton="@id/main_view_radio_button_1"
+            app:layout_constraintTop_toBottomOf="@id/main_view_menu">
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/main_view_radio_button_1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/radio_button_1"
+                android:textColor="@color/text_color"
+                app:useMaterialThemeColors="true" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/main_view_radio_button_2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/radio_button_2"
+                android:textColor="@color/text_color"
+                app:useMaterialThemeColors="true" />
+
+        </RadioGroup>
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main_foreground_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="38dp"
+        android:background="@color/foregroundColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_view_menu"
+        app:layout_constraintVertical_bias="0.562">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/foreground_mass_intention_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/mass_intention"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/main_foreground_masses_said_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/number_of_masses_said"
+            android:layout_marginStart="8dp"
+            android:textSize="24sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/foreground_mass_intention_textview" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/main_foreground_masses_said_number_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/mass_number_none"
+            android:textSize="24sp"
+            app:layout_constraintStart_toEndOf="@+id/main_foreground_masses_said_textview"
+            app:layout_constraintTop_toBottomOf="@+id/foreground_mass_intention_textview" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/main_foreground_date_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/date"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/main_foreground_masses_said_textview" />
+
+        <LinearLayout
+            android:id="@+id/main_foreground_button_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/main_foreground_date_textview"
+            android:layout_marginTop="8dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/mass_said_button"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/submit_report_button"/>
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
